@@ -16,32 +16,7 @@ body, html {
     padding-top: 0px;
     background-color: #bdcad7;
   }
-  
-  #quiz {
-    background-color: #34495E;
-    padding-bottom: 60px;
-    width: 100%;
-    border-radius: 2%;
-    color: #fff;
-    text-align: center;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-  }
-  
-  #quiz > h1 {
-    text-align: center;
-    padding-top: 25px;
-    font-size: 20px;
-  }
-  
-  .questions {
-    font-size: 28px;
-    font-weight: 700;
-    font-style: italic;
-    border-top: 1px solid #FFFFFF;
-    border-bottom: 1px solid #FFFFFF;
-    padding: 20px;
-  }
-  
+
   .answers div {
     padding: 10px 0 0 0;
     font-size: 16px;
@@ -56,25 +31,15 @@ body, html {
     padding: 0px 0 10px 0px;
   }
   
-  .answers div {
-    width: 50%;
-    margin: 0 auto;
-    padding-bottom: 15px;
-    border-top: 1px solid grey;
-  }
+
   
   .answers div:first-child {
     border: none;
   }
-  
-  .checker {
-    display: inline-block;
-    width: 200px;
-    margin: 0 auto;
-  }
+
   
   .correct, .false {
-    background-color: #109D59;
+    background-color: #98a79f;
     width: 60px;
     height: 30px;
     line-height: 30px;
@@ -84,28 +49,23 @@ body, html {
     margin-top: 2px;
   }
   
-  .false {
-    background-color: #DC4437;
-  }
+  
 
   .cell {
     position: absolute;
     top: 200px;
     left:500px;
-    
-    
     width: 700px;
     margin: 0 auto;
-    height: 400px;
+    height: 300px;
     padding-top: 0px;
-    background-color: #109D59;
+    background-color: #7b9387;
   }
 
   .game--container {
-
     width: 50%;
     margin: 0 auto;
-    height: 700px;
+    height: 750px;
     padding-top: 0px;
     background-color: #DC4437;
   }
@@ -119,6 +79,8 @@ body, html {
     position: absolute;
     bottom: 150px;
     left:450px;
+    cursor: pointer;
+    
   }
 
   .game--ans3{
@@ -130,6 +92,7 @@ body, html {
     position: absolute;
     bottom: 50px;
     left:450px;
+    cursor: pointer;
   }
 
   .game--ans2{
@@ -141,6 +104,7 @@ body, html {
     position: absolute;
     bottom: 150px;
     left:900px;
+    cursor: pointer;
   }
 
   .game--ans4{
@@ -152,8 +116,14 @@ body, html {
     position: absolute;
     bottom: 50px;
     left:900px;
+    cursor: pointer;
   }
 
+.score{
+position: absolute;
+top:500px;
+left:750px;
 
+}
 
   
