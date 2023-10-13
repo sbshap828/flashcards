@@ -4,6 +4,9 @@ body, html {
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
+    background-color: #2880d8;
+    text-align: center;
+    font-size: 40px;
   }
   
   .wrapper {
@@ -11,6 +14,7 @@ body, html {
     margin: 0 auto;
     height: 100%;
     padding-top: 0px;
+    background-color: #bdcad7;
   }
   
   #quiz {
@@ -83,3 +87,73 @@ body, html {
   .false {
     background-color: #DC4437;
   }
+
+  .cell {
+    position: absolute;
+    top: 200px;
+    left:500px;
+    
+    
+    width: 700px;
+    margin: 0 auto;
+    height: 400px;
+    padding-top: 0px;
+    background-color: #109D59;
+  }
+
+  .game--container {
+
+    width: 50%;
+    margin: 0 auto;
+    height: 700px;
+    padding-top: 0px;
+    background-color: #DC4437;
+  }
+
+  .game--ans1{
+    width: 350px;
+    margin: 0 auto;
+    height: 80px;
+    padding-top: 0px;
+    background-color: #d8bab7;
+    position: absolute;
+    bottom: 150px;
+    left:450px;
+  }
+
+  .game--ans3{
+    width: 350px;
+    margin: 0 auto;
+    height: 80px;
+    padding-top: 0px;
+    background-color: #d8bab7;
+    position: absolute;
+    bottom: 50px;
+    left:450px;
+  }
+
+  .game--ans2{
+    width: 350px;
+    margin: 0 auto;
+    height: 80px;
+    padding-top: 0px;
+    background-color: #d8bab7;
+    position: absolute;
+    bottom: 150px;
+    left:900px;
+  }
+
+  .game--ans4{
+    width: 350px;
+    margin: 0 auto;
+    height: 80px;
+    padding-top: 0px;
+    background-color: #d8bab7;
+    position: absolute;
+    bottom: 50px;
+    left:900px;
+  }
+
+
+
+  

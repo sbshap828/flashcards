@@ -1,33 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <link rel="stylesheet" type="text/css" media="screen" href="./style.css" />
-  <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='style.css' type='text/css'>
-  <title>JS Bin</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flash Cards</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-  <div class="wrapper">
-    <div id="quiz">
-      <h1>Trivia quiz</h1>
-      
-      <p class="questions">
-        
-      </p>
-      
-      <div class="answers">
-        
-      </div>         
-      
-      <div class="checkAnswers">
-        <h3>Correct?</h3>
-        <div class="checker">
+  <section>
+    <h1 class="game--title">Flash Cards</h1>
+    <div class="game--container">
+     <button class="game--ans1">we are going to put ans1 info here</button>
+      <h2 class="game--status"></h2>
+    
+    <button class="game--ans2">we are going to put ans2 info here</button>
+    <button class="game--ans3">we are going to put ans3 info here</button>
+    <button class="game--ans4">we are going to put ans4 info here</button>
 
-        </div>
-      </div>
+     
+      <div class="cell" data-index="0"></div>
+
     </div>
-  </div>
-  <script src="./script.js"></script>
+    <!-- <h2 class="game--status"></h2>
+    <button class="game--ans1">we are going to put ans1 info here</button>
+    <button class="game--ans2">we are going to put ans2 info here</button>
+    <button class="game--ans3">we are going to put ans3 info here</button>
+    <button class="game--ans4">we are going to put ans4 info here</button> -->
+
+
+
+
+  </section>
 </body>
 </html>

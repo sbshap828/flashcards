@@ -82,9 +82,9 @@ const bla = new Deck()
 //cards.forEach(element => console.log(cards[i])
 
 function handleRestartGame() {
-  gameActive = true;
-  currentPlayer = "X";
-  gameState = ["", "", "", "", "", "", "", "", ""];
+  //gameActive = true;
+ // currentPlayer = "X";
+  //gameState = ["", "", "", "", "", "", "", "", ""];
   statusDisplay.innerHTML = currentPlayerTurn();
   document.querySelectorAll(".cell").forEach((cell) => (cell.innerText = ""));
   document.querySelectorAll(".cell").forEach((cell) => (cell.style.backgroundColor = "white"))
