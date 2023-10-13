@@ -24,28 +24,28 @@ class Deck {
     
     //["Hearts", "Diamonds", "Spades", "Clubs"];
     const ans1 = [
-      "chicago",
-      "aaaa",
-      "bbbb"
+      "ans11",
+      "ans12",
+      "ans13"
     ];
 
     const ans2 = [
-      "chicago",
-      "aaaa",
-      "bbbb"
+      "ans21",
+      "ans22",
+      "ans23"
     ];
 
 
     const ans3 = [
-      "chicago",
-      "aaaa",
-      "bbbb"
+      "ans31",
+      "ans32",
+      "ans33"
     ];
 
     const ans4 = [
-      "chicago",
-      "aaaa",
-      "bbbb"
+      "ans41",
+      "ans42",
+      "ans43"
     ];
 
 
@@ -75,7 +75,7 @@ class Deck {
     console.log(cards[1])
   }
 }
-
+console.log("i'm here2")
 const bla = new Deck()
 // hopefully a shuffled deck of flashcards
 
@@ -85,15 +85,26 @@ function handleRestartGame() {
   //gameActive = true;
  // currentPlayer = "X";
   //gameState = ["", "", "", "", "", "", "", "", ""];
-  statusDisplay.innerHTML = currentPlayerTurn();
-  document.querySelectorAll(".cell").forEach((cell) => (cell.innerText = ""));
-  document.querySelectorAll(".cell").forEach((cell) => (cell.style.backgroundColor = "white"))
+ // statusDisplay.innerHTML = currentPlayerTurn();
+ console.log(bla.cards[0].ans1)
+ console.log(bla.cards[0].ans2)
+ console.log(bla.cards[0].ans3)
+ console.log(bla.cards[0].ans4)
+ 
+  document.querySelector(".game--ans1").innerHTML=bla.cards[0].ans1
+ document.querySelector(".game--ans2").innerHTML=bla.cards[0].ans2
+  document.querySelector(".game--ans3").innerHTML=bla.cards[0].ans3
+  document.querySelector(".game--ans4").innerHTML=bla.cards[0].ans4
+  console.log("i'm here")
 }
 
+const blas = handleRestartGame() 
 
 
 
-
+//document
+  //.querySelector(".game--ans1").addEventListener(handleCellClick)
+  //.forEach((cell) => cell.addEventListener("click", handleCellClick));
 
 
 // //window.onload = function () {
