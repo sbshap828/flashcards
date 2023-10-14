@@ -107,7 +107,12 @@ function displayQuestion(){
   let currentQuestion = statesArray[index]
 
   question.innerText = currentQuestion.state
+//we need to intercept the shuffle to learn where answer end up
 
+let originalPosition = currentQuestion.choices[0]
+//originalPosition contains actual capital
+console.log("aaaa   " +originalPosition)
+let ansPosition = ""
   for (let i = currentQuestion.choices.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
 
@@ -115,12 +120,55 @@ function displayQuestion(){
     currentQuestion.choices[i] = currentQuestion.choices[j];
     currentQuestion.choices[j] = temp;
   }
+// console.log("abbb   " +originalPosition)
+// console.log("sssss   " + currentQuestion.choices[0])
+
+// console.log("ssss1   " + currentQuestion.choices[1])
+// console.log("ssss2   " + currentQuestion.choices[2])
+// console.log("ssss3   " + currentQuestion.choices[3])
+if (originalPosition===currentQuestion.choices[0]){
+  //console.log("in loop   " +originalPosition)
+  ansPosition=0
+  console.log(ansPosition + " jjjj")
+}
+if (originalPosition===currentQuestion.choices[1]){
+ // console.log("in loop   " +originalPosition)
+  ansPosition=1
+  console.log(ansPosition + " j kkk")
+}
+if (originalPosition===currentQuestion.choices[2]){
+  //console.log("in loop   " +originalPosition)
+  ansPosition=2
+  console.log(ansPosition + " j llll")
+}
+if (originalPosition===currentQuestion.choices[3]){
+  //console.log("in loop   " +originalPosition)
+  ansPosition=3
+  console.log(ansPosition + " jmmm")
+}
+
+
+  
+//now have the new positions
+
+
+
+  
+
+ //console.log(k + " new ans position ")
+
+
+
 
   ans1.innerText = currentQuestion.choices[0]
   ans2.innerText = currentQuestion.choices[1]
   ans3.innerText = currentQuestion.choices[2]
   ans4.innerText = currentQuestion.choices[3]
-}
+// think new code goes here
+
+
+  } 
+
 
 function endGame(){
   if (scoreTotal > 40) {
@@ -151,7 +199,9 @@ function handleClick(e){
   if (userChoice === statesArray[index].answer) {
     scoreTotal++
     scoreBoard.innerText = scoreTotal
-  }
+     } else {
+      console.log(statesArray[index].answer)
+     }
 
   ans1.disabled = true
   ans2.disabled = true
