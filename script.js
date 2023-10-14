@@ -590,6 +590,7 @@ const ans3 = document.querySelector(".game--ans3")
 const ans4 = document.querySelector(".game--ans4")
 const nextBtn = document.querySelector(".next-btn")
 const modal = document.querySelector("#modal-one")
+const modal2 = document.querySelector("#modal-two")
 const modalRestartBtn = document.querySelector(".modal-restart")
 const modalExitBtn = document.querySelector(".modal-close")
 const modalMessage = document.querySelector(".modal-message")
@@ -609,8 +610,10 @@ function shuffle(){
 shuffle()
 
 function displayQuestion(){
+// here it test of 3 states
+if (index === 4) {
 
-  if (index >= statesArray.length) {
+//if (index >= statesArray.length) {
     endGame()
     return;
   }
@@ -682,6 +685,7 @@ if (originalPosition===currentQuestion.choices[3]){
 
 
 function endGame(){
+  alert("end of game")
   if (scoreTotal > 40) {
     modalMessage.innerText = "You are really good at this!"
     modalScore.innerText = scoreTotal
@@ -710,11 +714,17 @@ function handleClick(e){
   if (userChoice === statesArray[index].answer) {
     scoreTotal++
     scoreBoard.innerText = scoreTotal
+    //alert("the correct answer is " + statesArray[index].answer)
+    goModal(true)
+    //modal here- with same as below 
      } else {
       console.log("here is where we neeed " +statesArray[index].answer)
       console.log("the correct answer is  "+ ansPosition)
       console.log(typeof(ansPosition))
-      alert("the correct answer is " + statesArray[index].answer)
+      //alert("the correct answer is " + statesArray[index].answer)
+      goModal(false)
+// want a modal here to display 
+
      }
 
   ans1.disabled = true
@@ -722,6 +732,18 @@ function handleClick(e){
   ans3.disabled = true
   ans4.disabled = true
 }
+function goModal(TorF){
+alert (TorF +" i am in the goModal")
+
+
+
+
+
+}
+
+
+
+
 
 displayQuestion()
 
