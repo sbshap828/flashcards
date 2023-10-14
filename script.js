@@ -567,7 +567,9 @@ const statesHistoryArray=
 capitalHistory: " Before the capitol was in its current location in Charleston, several West Virginia cities had served as the capitol location for the State of West Virginia. The capitol was first located in Wheeling from 1863-1870 in the Linsly Institute Building. It was moved to downtown Charleston from 1870-1875.",
   }
 ]
+Object.assign(statesArray,statesJpegArray)
 
+Object.assign(statesArray,statesHistoryArray)
 
 
 
@@ -595,6 +597,9 @@ const modalRestartBtn = document.querySelector(".modal-restart")
 const modalExitBtn = document.querySelector(".modal-close")
 const modalMessage = document.querySelector(".modal-message")
 const modalScore = document.querySelector(".modal-score")
+const modal2ExitBtn = document.querySelector(".modal2-close")
+const modal2Message = document.querySelector(".modal2-message")
+
 let index = 0
 let scoreTotal = 0
 let ansPosition = ""
@@ -611,7 +616,7 @@ shuffle()
 
 function displayQuestion(){
 // here it test of 3 states
-if (index === 4) {
+if (index === 3) {
 
 //if (index >= statesArray.length) {
     endGame()
@@ -619,13 +624,15 @@ if (index === 4) {
   }
 
   let currentQuestion = statesArray[index]
-
+  
+ // needtoknow=statesArray[index]
+  //alert (needtoknow + "kkjkg")
   question.innerText = currentQuestion.state
 //we need to intercept the shuffle to learn where answer end up
 
 let originalPosition = currentQuestion.choices[0]
 //originalPosition contains actual capital
-console.log("aaaa   " +originalPosition)
+
 
   for (let i = currentQuestion.choices.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -712,17 +719,19 @@ function nextQuestion(){
 function handleClick(e){
   let userChoice = e.target.innerText
   if (userChoice === statesArray[index].answer) {
+    
+    alert(statesArray[index].capitalHistory +   "answer")
     scoreTotal++
     scoreBoard.innerText = scoreTotal
     //alert("the correct answer is " + statesArray[index].answer)
-    goModal(true)
+    goModal(true,index)
     //modal here- with same as below 
      } else {
-      console.log("here is where we neeed " +statesArray[index].answer)
-      console.log("the correct answer is  "+ ansPosition)
-      console.log(typeof(ansPosition))
-      //alert("the correct answer is " + statesArray[index].answer)
-      goModal(false)
+      // console.log("here is where we neeed " +statesArray[index].answer)
+      // console.log("the correct answer is  "+ needtoknow)
+      // console.log(typeof(ansPosition))
+      // //alert("the correct answer is " + statesHistoryArray[statesArray][index])
+      goModal(false,index)
 // want a modal here to display 
 
      }
@@ -732,14 +741,21 @@ function handleClick(e){
   ans3.disabled = true
   ans4.disabled = true
 }
-function goModal(TorF){
+function goModal(TorF,index){
 alert (TorF +" i am in the goModal")
+//alert("current  " +needtoknow)
 
 
+modal2Message.innerText = "In Modal 2"
+modal2.classList.add('open')
+modal2ExitBtn.addEventListener("click", (e)=>{
+  modal2.classList.remove("open")
 
 
-
+})
 }
+
+
 
 
 
