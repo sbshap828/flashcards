@@ -720,18 +720,18 @@ function handleClick(e){
   let userChoice = e.target.innerText
   if (userChoice === statesArray[index].answer) {
     
-    alert(statesArray[index].capitalHistory +   "answer")
+   
     scoreTotal++
     scoreBoard.innerText = scoreTotal
     //alert("the correct answer is " + statesArray[index].answer)
-    goModal(true,index)
+    goModal("true",statesArray[index].capitalHistory)
     //modal here- with same as below 
      } else {
       // console.log("here is where we neeed " +statesArray[index].answer)
       // console.log("the correct answer is  "+ needtoknow)
       // console.log(typeof(ansPosition))
       // //alert("the correct answer is " + statesHistoryArray[statesArray][index])
-      goModal(false,index)
+      goModal("false",statesArray[index].capitalHistory)
 // want a modal here to display 
 
      }
@@ -741,12 +741,19 @@ function handleClick(e){
   ans3.disabled = true
   ans4.disabled = true
 }
-function goModal(TorF,index){
-alert (TorF +" i am in the goModal")
+function goModal(TorF,CHarlie){
+
 //alert("current  " +needtoknow)
 
+if (TorF==="true") {
+  modal2Message.innerText = ("Great Choice!!!!" + CHarlie)
+} 
 
-modal2Message.innerText = "In Modal 2"
+if (TorF==="false") {
+  modal2Message.innerText = ("Boo!" + CHarlie)
+
+}
+
 modal2.classList.add('open')
 modal2ExitBtn.addEventListener("click", (e)=>{
   modal2.classList.remove("open")
