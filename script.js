@@ -779,6 +779,12 @@ if (TorF==="false") {
 
 }// here......
 document.querySelector(".modal2-jpeg-spot").innerText= "<img src = " + jpeg + "/>"
+//document.getElementById(img01)= "src = " + jpeg
+//document.getElementById(img01)= 
+//var img = document.getElementById("myImg");
+//var modalImg = document.getElementById("img01");
+
+//<img class="modal2-content" id="img01" 
 //document.getElementsByClassName(".modal2-picture")("<img src = " + jpeg + "/>")
 // below is not working
 
