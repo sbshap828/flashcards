@@ -653,7 +653,7 @@ if (index === 12) {
  // needtoknow=statesArray[index]
   //alert (needtoknow + "kkjkg")
   question.innerText = currentQuestion.state
-//we need to intercept the shuffle to learn where answer end up
+//we need to intercept the shuffle to learn where answer ended up
 
 let originalPosition = currentQuestion.choices[0]
 //originalPosition contains actual capital
@@ -661,60 +661,30 @@ let originalPosition = currentQuestion.choices[0]
 
   for (let i = currentQuestion.choices.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
-
     let temp = currentQuestion.choices[i];
     currentQuestion.choices[i] = currentQuestion.choices[j];
     currentQuestion.choices[j] = temp;
   }
-// console.log("abbb   " +originalPosition)
-// console.log("sssss   " + currentQuestion.choices[0])
-
-// console.log("ssss1   " + currentQuestion.choices[1])
-// console.log("ssss2   " + currentQuestion.choices[2])
-// console.log("ssss3   " + currentQuestion.choices[3])
 if (originalPosition===currentQuestion.choices[0]){
-  //console.log("in loop   " +originalPosition)
   ansPosition=0
-  console.log(ansPosition + " jjjj")
 }
 if (originalPosition===currentQuestion.choices[1]){
- // console.log("in loop   " +originalPosition)
   ansPosition=1
-  console.log(ansPosition + " j kkk")
 }
 if (originalPosition===currentQuestion.choices[2]){
-  //console.log("in loop   " +originalPosition)
   ansPosition=2
-  console.log(ansPosition + " j llll")
 }
 if (originalPosition===currentQuestion.choices[3]){
-  //console.log("in loop   " +originalPosition)
   ansPosition=3
-  console.log(ansPosition + " jmmm")
 }
-
-
-  
 //now have the new positions
-
-
-
-  
-
- //console.log(k + " new ans position ")
-
-
-
 
   ans1.innerText = currentQuestion.choices[0]
   ans2.innerText = currentQuestion.choices[1]
   ans3.innerText = currentQuestion.choices[2]
   ans4.innerText = currentQuestion.choices[3]
 // think new code goes here
-
-
   } 
-
 
 function endGame(){
   alert("end of game")
@@ -735,6 +705,7 @@ function endGame(){
 function nextQuestion(){
   index++
   displayQuestion()
+ 
   ans1.disabled = false
   ans2.disabled = false
   ans3.disabled = false
@@ -744,20 +715,16 @@ function nextQuestion(){
 function handleClick(e){
   let userChoice = e.target.innerText
   if (userChoice === statesArray[index].answer) {
-    
    
     scoreTotal++
     scoreBoard.innerText = scoreTotal
     //alert("the correct answer is " + statesArray[index].answer)
+   
     goModal("true",statesArray[index].capitalHistory,statesArray[index].picture)
-    //modal here- with same as below 
+    
      } else {
-      // console.log("here is where we neeed " +statesArray[index].answer)
-      // console.log("the correct answer is  "+ needtoknow)
-      // console.log(typeof(ansPosition))
-      // //alert("the correct answer is " + statesHistoryArray[statesArray][index])
+    
       goModal("false",statesArray[index].capitalHistory,statesArray[index].picture)
-// want a modal here to display 
 
      }
 
@@ -768,31 +735,29 @@ function handleClick(e){
 }
 function goModal(TorF,Charlie,jpeg){
 
-//alert("current  " +needtoknow)
-
 if (TorF==="true") {
-  modal2Message.innerText = ("Great Choice!!!!" + Charlie)
+  modal2Message.innerText = ("Great Choice!!!! " + Charlie)
 } 
 
 if (TorF==="false") {
-  modal2Message.innerText = ("Boo!" + Charlie)
+  modal2Message.innerText = ("Boo! " + Charlie)
 
-}// here......
-document.querySelector(".modal2-jpeg-spot").innerText= "<img src = " + jpeg + "/>"
-//document.getElementById(img01)= "src = " + jpeg
-//document.getElementById(img01)= 
-//var img = document.getElementById("myImg");
+}
+// index=index + 1
+// here......
+//document.querySelector(".modal2-jpeg-spot").innerText= '<img src = "' + jpeg + '"width = "190" height ="237" />'
+//this works for text document.querySelector(".modal2-jpeg-spot").innerText= "<img src = " + jpeg + "/>"
+document.querySelector(".modal2-jpeg-spot").src =  + jpeg + '"width = "700" height ="237" />'
+//vadocument.getElementById("myImg");
 //var modalImg = document.getElementById("img01");
 
 //<img class="modal2-content" id="img01" 
 //document.getElementsByClassName(".modal2-picture")("<img src = " + jpeg + "/>")
 // below is not working
-
-//alert ("picture" + jpeg)
 modal2.classList.add('open')
 modal2ExitBtn.addEventListener("click", (e)=>{
-  modal2.classList.remove("open")
-
+modal2.classList.remove("open")
+nextQuestion()
 
 })
 }
