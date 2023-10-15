@@ -1,281 +1,82 @@
-const statesArray = [
-  {
-    state: "Alabama",
-    choices: ["Montgomery", "Mobile", "Birmingham", "Huntsville"],
-    answer: "Montgomery",
-  },
-  {
-    state: "Alaska",
-    choices: ["Juneau", "Anchorage", "Fairbanks", "Sitka"],
-    answer: "Juneau",
-  },
-  {
-    state: "Arizona",
-    choices: ["Phoenix", "Tucson", "Mesa", "Chandler"],
-    answer: "Phoenix",
-  },
-  {
-    state: "Arkansas",
-    choices: ["Little Rock", "Fayetteville", "Conway", "Hot Springs"],
-    answer: "Little Rock",
-  },
-  {
-    state: "California",
-    choices: ["Sacramento", "Los Angeles", "San Diego", "San Francisco"],
-    answer: "Sacramento",
-  },
-  {"state": "Colorado", "choices": ["Denver", "Colorado Springs", "Aurora", "Boulder"], "answer": "Denver"},
-  {"state": "Connecticut", "choices": ["Hartford", "New Haven", "Stamford", "Bridgeport"], "answer": "Hartford"},
-  {"state": "Delaware", "choices": ["Dover", "Wilmington", "Newark", "Middletown"], "answer": "Dover"},
-  {"state": "Florida", "choices": ["Tallahassee", "Miami", "Orlando", "Tampa"], "answer": "Tallahassee"},
-  {"state": "Georgia", "choices": ["Atlanta", "Augusta", "Savannah", "Macon"], "answer": "Atlanta"},
-  {"state": "Hawaii", "choices": ["Honolulu", "Hilo", "Kailua", "Kapolei"], "answer": "Honolulu"},
-  {"state": "Idaho", "choices": ["Boise", "Nampa", "Meridian", "Idaho Falls"], "answer": "Boise"},
-  {"state": "Illinois", "choices": ["Springfield", "Chicago", "Naperville", "Peoria"], "answer": "Springfield"},
-  {"state": "Indiana", "choices": ["Indianapolis", "Fort Wayne", "Evansville", "South Bend"], "answer": "Indianapolis"},
-  {"state": "Iowa", "choices": ["Des Moines", "Cedar Rapids", "Davenport", "Sioux City"], "answer": "Des Moines"},
-  {"state": "Kansas", "choices": ["Topeka", "Wichita", "Kansas City", "Overland Park"], "answer": "Topeka"},
-  {"state": "Kentucky", "choices": ["Frankfort", "Louisville", "Lexington", "Bowling Green"], "answer": "Frankfort"},
-  {"state": "Louisiana", "choices": ["Baton Rouge", "New Orleans", "Shreveport", "Lafayette"], "answer": "Baton Rouge"},
-  {"state": "Maine", "choices": ["Augusta", "Portland", "Lewiston", "Bangor"], "answer": "Augusta"},
-  {"state": "Maryland", "choices": ["Annapolis", "Baltimore", "Frederick", "Rockville"], "answer": "Annapolis"},
-  {"state": "Massachusetts", "choices": ["Boston", "Worcester", "Springfield", "Cambridge"], "answer": "Boston"},
-  {"state": "Michigan", "choices": ["Lansing", "Detroit", "Grand Rapids", "Ann Arbor"], "answer": "Lansing"},
-  {"state": "Minnesota", "choices": ["Saint Paul", "Minneapolis", "Rochester", "Duluth"], "answer": "Saint Paul"},
-  {"state": "Mississippi", "choices": ["Jackson", "Gulfport", "Hattiesburg", "Biloxi"], "answer": "Jackson"},
-  {"state": "Missouri", "choices": ["Jefferson City", "Saint Louis", "Kansas City", "Springfield"], "answer": "Jefferson City"},
-  {"state": "Montana", "choices": ["Helena", "Billings", "Missoula", "Bozeman"], "answer": "Helena"},
-  {"state": "Nebraska", "choices": ["Lincoln", "Omaha", "Bellevue", "Grand Island"], "answer": "Lincoln"},
-  {"state": "Nevada", "choices": ["Carson City", "Las Vegas", "Reno", "Henderson"], "answer": "Carson City"},
-  {"state": "New Hampshire", "choices": ["Concord", "Manchester", "Nashua", "Portsmouth"], "answer": "Concord"},
-  {"state": "New Jersey", "choices": ["Trenton", "Newark", "Jersey City", "Paterson"], "answer": "Trenton"},
-  {"state": "New Mexico", "choices": ["Santa Fe", "Albuquerque", "Las Cruces", "Roswell"], "answer": "Santa Fe"},
-  {"state": "New York", "choices": ["Albany", "New York City", "Buffalo", "Rochester"], "answer": "Albany"},
-  {"state": "North Carolina", "choices": ["Raleigh", "Charlotte", "Greensboro", "Durham"], "answer": "Raleigh"},
-  {"state": "North Dakota", "choices": ["Bismarck", "Fargo", "Grand Forks", "Minot"], "answer": "Bismarck"},
-  {"state": "Ohio", "choices": ["Columbus", "Cleveland", "Cincinnati", "Toledo"], "answer": "Columbus"},
-  {"state": "Oklahoma", "choices": ["Oklahoma City", "Tulsa", "Norman", "Broken Arrow"], "answer": "Oklahoma City"},
-  {"state": "Oregon", "choices": ["Salem", "Portland", "Eugene", "Gresham"], "answer": "Salem"},
-  {"state": "Pennsylvania", "choices": ["Harrisburg", "Philadelphia", "Pittsburgh", "Allentown"], "answer": "Harrisburg"},
-  {"state": "Rhode Island", "choices": ["Providence", "Warwick", "Cranston", "Pawtucket"], "answer": "Providence"},
-  {"state": "South Carolina", "choices": ["Columbia", "Charleston", "Greenville", "Myrtle Beach"], "answer": "Columbia"},
-  {"state": "South Dakota", "choices": ["Pierre", "Sioux Falls", "Rapid City", "Aberdeen"], "answer": "Pierre"},
-  {"state": "Tennessee", "choices": ["Nashville", "Memphis", "Knoxville", "Chattanooga"], "answer": "Nashville"},
-  {"state": "Texas", "choices": ["Austin", "Houston", "Dallas", "San Antonio"], "answer": "Austin"},
-  {"state": "Utah", "choices": ["Salt Lake City", "Provo", "Ogden", "St. George"], "answer": "Salt Lake City"},
-  {"state": "Vermont", "choices": ["Montpelier", "Burlington", "Rutland", "Barre"], "answer": "Montpelier"},
-  {"state": "Virginia", "choices": ["Richmond", "Virginia Beach", "Norfolk", "Alexandria"], "answer": "Richmond"},
-  {"state": "Washington", "choices": ["Olympia", "Seattle", "Spokane", "Tacoma"], "answer": "Olympia"},
-  {"state": "West Virginia", "choices": ["Charleston", "Huntington", "Morgantown", "Parkersburg"], "answer": "Charleston"},
-  {"state": "Wisconsin", "choices": ["Madison", "Milwaukee", "Green Bay", "Kenosha"], "answer": "Madison"},
-  {"state": "Wyoming", "choices": ["Cheyenne", "Casper", "Laramie", "Gillette"], "answer": "Cheyenne"}
-];
-
-const statesJpegArray =
-[
-  {
-    state: "Alabama",
-    picture: "https://www.dreamstime.com/stock-photo-alabama-state-capitol-montgomery-image59427331"
-  },
-  {
-    state: "Alaska",
-    picture: "https://www.dreamstime.com/stock-photo-alaska-state-capitol-juneau-image18234140"
-  },
-  {
-    state: "Arizona",
-    picture: "https://www.dreamstime.com/stock-photo-arizona-state-capitol-phoenix-image14810730"
-  },
-  {
-    state: "Arkansas",
-    picture: "https://www.dreamstime.com/stock-photo-state-capitol-arkansas-little-rock-at-night-image81614351"
-  },
-  {
-    state: "California",
-    picture: "https://www.dreamstime.com/stock-photo-state-capitol-california-sacramento-image95022722"
-  },
-  {
-    state: "Colorado",
-    picture: "https://www.dreamstime.com/stock-photo-colorado-state-capitol-building-denver-image68169549"
-  },
-  {
-    state: "Connecticut",
-    picture: "https://www.dreamstime.com/stock-photo-state-capitol-connecticut-hartford-image24989180"
-  },
-  {
-    state: "Delaware",
-    picture: "https://www.dreamstime.com/stock-photo-delaware-state-capitol-dover-image22602180"
-  },
-  {
-    state: "Florida",
-    picture: "https://www.dreamstime.com/stock-photo-florida-state-capitol-tallahassee-image54274598"
-  },
-  {
-    state: "Georgia",
-    picture: "https://www.dreamstime.com/stock-photo-georgia-state-capitol-atlanta-image16336160"
-  },
-  {
-    state: "Hawaii",
-    picture: "https://www.dreamstime.com/stock-photo-hawaii-state-capitol-honolulu-image49748487"
-  },
-  {
-    state: "Idaho",
-    picture: "https://www.dreamstime.com/stock-photo-idaho-state-capitol-boise-image18650030"
-  },
-  {
-    state: "Illinois",
-    picture: "https://www.dreamstime.com/stock-photo-illinois-state-capitol-springfield-image36049570"
-  },
-  {
-    state: "Indiana",
-    picture: "https://www.dreamstime.com/stock-photo-state-capitol-indiana-indianapolis-image27357480"
-  },
-  {
-    state: "Iowa",
-    picture: "https://www.dreamstime.com/stock-photo-iowa-state-capitol-des-moines-image16682110"
-  },
-  {
-    state: "Kansas",
-    picture: "https://www.dreamstime.com/stock-photo-kansas-state-capitol-topeka-image59966705"
-  },
-  {
-    state: "Kentucky",
-    picture: "https://www.dreamstime.com/stock-photo-kentucky-state-capitol-frankfort-image49313550"
-  },
-  {
-    state: "Louisiana",
-    picture: "https://www.dreamstime.com/stock-photo-louisiana-state-capitol-baton-rouge-image10992720"
-  },
-  {
-    state: "Maine",
-    picture: "https://www.dreamstime.com/stock-photo-maine-state-capitol-augusta-image93654922"
-  },
-  {
-    state: "Maryland",
-    picture: "https://www.dreamstime.com/stock-photo-maryland-state-capitol-annapolis-image7402650"
-  },
-  {
-    state: "Massachusetts",
-    picture: "https://www.dreamstime.com/stock-photo-massachusetts-state-house-gold-domed-building-boston-image70201797"
-  },
-  {
-    state: "Michigan",
-    picture: "https://www.dreamstime.com/stock-photo-michigan-state-capitol-lansing-image56688960"
-  },
-  {
-    state: "Minnesota",
-    picture: "https://www.dreamstime.com/stock-photo-minnesota-state-capitol-saint-paul-image69927469"
-  },
-  {
-    state: "Mississippi",
-    picture: "https://www.dreamstime.com/stock-photo-mississippi-state-capitol-jackson-image21297750"
-  },
-  {
-    state: "Missouri",
-    picture: "https://www.dreamstime.com/stock-photo-missouri-state-capitol-building-jefferson-city-image72172657"
-  },
-  {
-    state: "Montana",
-    picture: "https://www.dreamstime.com/stock-photo-montana-capitol-building-helena-image74856871"
-  },
-  {
-    state: "Nebraska",
-    picture: "https://www.dreamstime.com/stock-photo-nebraska-state-capitol-lincoln-nebraska-image37960820"
-  },
-  {
-    state: "Nevada",
-    picture: "https://www.dreamstime.com/stock-photo-nevada-state-capitol-carson-city-image16681320"
-  },
-  {
-    state: "New Hampshire",
-    picture: "https://www.dreamstime.com/stock-photo-new-hampshire-state-capitol-concord-image18191520"
-  },
-  {
-    state: "New Jersey",
-    picture: "https://www.dreamstime.com/stock-photo-new-jersey-state-capitol-trenton-image15240870"
-  },
-  {
-    state: "New Mexico",
-    picture: "https://www.dreamstime.com/stock-photo-new-mexico-state-capitol-building-santa-fe-image33705140"
-  },
-  {
-    state: "New York",
-    picture: "https://www.dreamstime.com/stock-photo-new-york-state-capitol-albany-image62994117"
-  },
-  {
-    state: "North Carolina",
-    picture: "https://www.dreamstime.com/stock-photo-north-carolina-state-capitol-building-raleigh-image56758466"
-  },
-  {
-    state: "North Dakota",
-    picture: "https://www.dreamstime.com/stock-photo-north-dakota-state-capitol-bismarck-image22117280"
-  },
-  {
-    state: "Ohio",
-    picture: "https://www.dreamstime.com/stock-photo-ohio-state-capitol-columbus-image25145990"
-  },
-  {
-    state: "Oklahoma",
-    picture: "https://www.dreamstime.com/stock-photo-oklahoma-state-capitol-oklahoma-city-image65442559"
-  },
-  {
-    state: "Oregon",
-    picture: "https://www.dreamstime.com/stock-photo-oregon-state-capitol-building-salem-image13994750"
-  },
-  {
-    state: "Pennsylvania",
-    picture: "https://www.dreamstime.com/stock-photo-pennsylvania-state-capitol-harrisburg-image94703567"
-  },
-  {
-    state: "Rhode Island",
-    picture: "https://www.dreamstime.com/stock-photo-rhode-island-state-capitol-providence-image22362070"
-  },
-  {
-    state: "South Carolina",
-    picture: "https://www.dreamstime.com/stock-photo-south-carolina-state-capitol-building-columbia-image20469920"
-  },
-  {
-    state: "South Dakota",
-    picture: "https://www.dreamstime.com/stock-photo-south-dakota-state-capitol-building-pierre-image11153770"
-  },
-  {
-    state: "Tennessee",
-    picture: "https://www.dreamstime.com/stock-photo-tennessee-state-capitol-building-nashville-image106861773"
-  },
-  {
-    state: "Texas",
-    picture: "https://www.dreamstime.com/stock-photo-state-capitol-building-texas-austin-image28223870"
-  },
-  {
-    state: "Utah",
-    picture: "https://www.dreamstime.com/stock-photo-utah-state-capitol-building-salt-lake-city-image33705480"
-  },
-  {
-    state: "Vermont",
-    picture: "https://www.dreamstime.com/stock-photo-vermont-state-capitol-montpelier-image14044480"
-  },
-  {
-    state: "Virginia",
-    picture: "https://www.dreamstime.com/stock-photo-old-state-capitol-buildling-richmond-virginia-image23208470"
-  },
-  {
-    state: "Washington",
-    picture: "https://www.dreamstime.com/stock-photo-washington-state-capitol-building-olympia-image37637440"
-  },
-  {
-    state: "West Virginia",
-    picture: "https://www.dreamstime.com/stock-photo-west-virginia-state-capitol-building"
-  }
-]
+// const statesArray = [
+//   {
+//     state: "Alabama",
+//     choices: ["Montgomery", "Mobile", "Birmingham", "Huntsville"],
+//     answer: "Montgomery",
+//   },
+//   {
+//     state: "Alaska",
+//     choices: ["Juneau", "Anchorage", "Fairbanks", "Sitka"],
+//     answer: "Juneau",
+//   },
+//   {
+//     state: "Arizona",
+//     choices: ["Phoenix", "Tucson", "Mesa", "Chandler"],
+//     answer: "Phoenix",
+//   },
+//   {
+//     state: "Arkansas",
+//     choices: ["Little Rock", "Fayetteville", "Conway", "Hot Springs"],
+//     answer: "Little Rock",
+//   },
+//   {
+//     state: "California",
+//     choices: ["Sacramento", "Los Angeles", "San Diego", "San Francisco"],
+//     answer: "Sacramento",
+//   },
+//   {"state": "Colorado", "choices": ["Denver", "Colorado Springs", "Aurora", "Boulder"], "answer": "Denver"},
+//   {"state": "Connecticut", "choices": ["Hartford", "New Haven", "Stamford", "Bridgeport"], "answer": "Hartford"},
+//   {"state": "Delaware", "choices": ["Dover", "Wilmington", "Newark", "Middletown"], "answer": "Dover"},
+//   {"state": "Florida", "choices": ["Tallahassee", "Miami", "Orlando", "Tampa"], "answer": "Tallahassee"},
+//   {"state": "Georgia", "choices": ["Atlanta", "Augusta", "Savannah", "Macon"], "answer": "Atlanta"},
+//   {"state": "Hawaii", "choices": ["Honolulu", "Hilo", "Kailua", "Kapolei"], "answer": "Honolulu"},
+//   {"state": "Idaho", "choices": ["Boise", "Nampa", "Meridian", "Idaho Falls"], "answer": "Boise"},
+//   {"state": "Illinois", "choices": ["Springfield", "Chicago", "Naperville", "Peoria"], "answer": "Springfield"},
+//   {"state": "Indiana", "choices": ["Indianapolis", "Fort Wayne", "Evansville", "South Bend"], "answer": "Indianapolis"},
+//   {"state": "Iowa", "choices": ["Des Moines", "Cedar Rapids", "Davenport", "Sioux City"], "answer": "Des Moines"},
+//   {"state": "Kansas", "choices": ["Topeka", "Wichita", "Kansas City", "Overland Park"], "answer": "Topeka"},
+//   {"state": "Kentucky", "choices": ["Frankfort", "Louisville", "Lexington", "Bowling Green"], "answer": "Frankfort"},
+//   {"state": "Louisiana", "choices": ["Baton Rouge", "New Orleans", "Shreveport", "Lafayette"], "answer": "Baton Rouge"},
+//   {"state": "Maine", "choices": ["Augusta", "Portland", "Lewiston", "Bangor"], "answer": "Augusta"},
+//   {"state": "Maryland", "choices": ["Annapolis", "Baltimore", "Frederick", "Rockville"], "answer": "Annapolis"},
+//   {"state": "Massachusetts", "choices": ["Boston", "Worcester", "Springfield", "Cambridge"], "answer": "Boston"},
+//   {"state": "Michigan", "choices": ["Lansing", "Detroit", "Grand Rapids", "Ann Arbor"], "answer": "Lansing"},
+//   {"state": "Minnesota", "choices": ["Saint Paul", "Minneapolis", "Rochester", "Duluth"], "answer": "Saint Paul"},
+//   {"state": "Mississippi", "choices": ["Jackson", "Gulfport", "Hattiesburg", "Biloxi"], "answer": "Jackson"},
+//   {"state": "Missouri", "choices": ["Jefferson City", "Saint Louis", "Kansas City", "Springfield"], "answer": "Jefferson City"},
+//   {"state": "Montana", "choices": ["Helena", "Billings", "Missoula", "Bozeman"], "answer": "Helena"},
+//   {"state": "Nebraska", "choices": ["Lincoln", "Omaha", "Bellevue", "Grand Island"], "answer": "Lincoln"},
+//   {"state": "Nevada", "choices": ["Carson City", "Las Vegas", "Reno", "Henderson"], "answer": "Carson City"},
+//   {"state": "New Hampshire", "choices": ["Concord", "Manchester", "Nashua", "Portsmouth"], "answer": "Concord"},
+//   {"state": "New Jersey", "choices": ["Trenton", "Newark", "Jersey City", "Paterson"], "answer": "Trenton"},
+//   {"state": "New Mexico", "choices": ["Santa Fe", "Albuquerque", "Las Cruces", "Roswell"], "answer": "Santa Fe"},
+//   {"state": "New York", "choices": ["Albany", "New York City", "Buffalo", "Rochester"], "answer": "Albany"},
+//   {"state": "North Carolina", "choices": ["Raleigh", "Charlotte", "Greensboro", "Durham"], "answer": "Raleigh"},
+//   {"state": "North Dakota", "choices": ["Bismarck", "Fargo", "Grand Forks", "Minot"], "answer": "Bismarck"},
+//   {"state": "Ohio", "choices": ["Columbus", "Cleveland", "Cincinnati", "Toledo"], "answer": "Columbus"},
+//   {"state": "Oklahoma", "choices": ["Oklahoma City", "Tulsa", "Norman", "Broken Arrow"], "answer": "Oklahoma City"},
+//   {"state": "Oregon", "choices": ["Salem", "Portland", "Eugene", "Gresham"], "answer": "Salem"},
+//   {"state": "Pennsylvania", "choices": ["Harrisburg", "Philadelphia", "Pittsburgh", "Allentown"], "answer": "Harrisburg"},
+//   {"state": "Rhode Island", "choices": ["Providence", "Warwick", "Cranston", "Pawtucket"], "answer": "Providence"},
+//   {"state": "South Carolina", "choices": ["Columbia", "Charleston", "Greenville", "Myrtle Beach"], "answer": "Columbia"},
+//   {"state": "South Dakota", "choices": ["Pierre", "Sioux Falls", "Rapid City", "Aberdeen"], "answer": "Pierre"},
+//   {"state": "Tennessee", "choices": ["Nashville", "Memphis", "Knoxville", "Chattanooga"], "answer": "Nashville"},
+//   {"state": "Texas", "choices": ["Austin", "Houston", "Dallas", "San Antonio"], "answer": "Austin"},
+//   {"state": "Utah", "choices": ["Salt Lake City", "Provo", "Ogden", "St. George"], "answer": "Salt Lake City"},
+//   {"state": "Vermont", "choices": ["Montpelier", "Burlington", "Rutland", "Barre"], "answer": "Montpelier"},
+//   {"state": "Virginia", "choices": ["Richmond", "Virginia Beach", "Norfolk", "Alexandria"], "answer": "Richmond"},
+//   {"state": "Washington", "choices": ["Olympia", "Seattle", "Spokane", "Tacoma"], "answer": "Olympia"},
+//   {"state": "West Virginia", "choices": ["Charleston", "Huntington", "Morgantown", "Parkersburg"], "answer": "Charleston"},
+//   {"state": "Wisconsin", "choices": ["Madison", "Milwaukee", "Green Bay", "Kenosha"], "answer": "Madison"},
+//   {"state": "Wyoming", "choices": ["Cheyenne", "Casper", "Laramie", "Gillette"], "answer": "Cheyenne"}
+// ];
 
 
 
 
 
 
-
-
-
-const statesHistoryArray=
+const statesArray=
 
 [
   {
@@ -283,6 +84,7 @@ const statesHistoryArray=
     choices: ["Birmingham", "Huntsville", "Mobile", "Montgomery"],
     answer: "Montgomery",
     capitalHistory: "Montgomery became the capital of Alabama in 1846, replacing Tuscaloosa as the seat of state government. The move was part of a compromise to resolve differences between north and south Alabama over the location of the capital.",
+
   },
   {
     state: "Alaska",
@@ -565,16 +367,223 @@ const statesHistoryArray=
     choices: ["Charleston", "Huntington", "Morgantown"],
     answer: "Olympia",
 capitalHistory: " Before the capitol was in its current location in Charleston, several West Virginia cities had served as the capitol location for the State of West Virginia. The capitol was first located in Wheeling from 1863-1870 in the Linsly Institute Building. It was moved to downtown Charleston from 1870-1875.",
-  }
+  } 
 ]
-Object.assign(statesArray,statesJpegArray)
-
-Object.assign(statesArray,statesHistoryArray)
 
 
+// const statesJpegArray =
+// [
+//   {
+//     state: "Alabama",
+//     picture: "rtteertr",
+//     //"https://www.dreamstime.com/stock-photo-alabama-state-capitol-montgomery-image59427331",
+//   },
+//   {
+//     state: "Alaska",
+//     picture:"kjggkjgkjgjk ",
+//     //https://www.dreamstime.com/stock-photo-alaska-state-capitol-juneau-image18234140"
+//   },
+//   {
+//     state: "Arizona",
+//     picture: "dsfsfsf",
+//     //"https://www.dreamstime.com/stock-photo-arizona-state-capitol-phoenix-image14810730",
+//   }
+  // {
+  //   state: "Arkansas",
+  //   picture: "https://www.dreamstime.com/stock-photo-state-capitol-arkansas-little-rock-at-night-image81614351",
+  // }
+  // {
+  //   state: "California",
+  //   picture: "https://www.dreamstime.com/stock-photo-state-capitol-california-sacramento-image95022722"
+  // },
+  // {
+  //   state: "Colorado",
+  //   picture: "https://www.dreamstime.com/stock-photo-colorado-state-capitol-building-denver-image68169549"
+  // },
+  // {
+  //   state: "Connecticut",
+  //   picture: "https://www.dreamstime.com/stock-photo-state-capitol-connecticut-hartford-image24989180"
+  // },
+  // {
+  //   state: "Delaware",
+  //   picture: "https://www.dreamstime.com/stock-photo-delaware-state-capitol-dover-image22602180"
+  // },
+  // {
+  //   state: "Florida",
+  //   picture: "https://www.dreamstime.com/stock-photo-florida-state-capitol-tallahassee-image54274598"
+  // },
+  // {
+  //   state: "Georgia",
+  //   picture: "https://www.dreamstime.com/stock-photo-georgia-state-capitol-atlanta-image16336160"
+  // },
+  // {
+  //   state: "Hawaii",
+  //   picture: "https://www.dreamstime.com/stock-photo-hawaii-state-capitol-honolulu-image49748487"
+  // },
+  // {
+  //   state: "Idaho",
+  //   picture: "https://www.dreamstime.com/stock-photo-idaho-state-capitol-boise-image18650030"
+  // },
+  // {
+  //   state: "Illinois",
+  //   picture: "https://www.dreamstime.com/stock-photo-illinois-state-capitol-springfield-image36049570"
+  // },
+  // {
+  //   state: "Indiana",
+  //   picture: "https://www.dreamstime.com/stock-photo-state-capitol-indiana-indianapolis-image27357480"
+  // },
+  // {
+  //   state: "Iowa",
+  //   picture: "https://www.dreamstime.com/stock-photo-iowa-state-capitol-des-moines-image16682110"
+  // },
+  // {
+  //   state: "Kansas",
+  //   picture: "https://www.dreamstime.com/stock-photo-kansas-state-capitol-topeka-image59966705"
+  // },
+  // {
+  //   state: "Kentucky",
+  //   picture: "https://www.dreamstime.com/stock-photo-kentucky-state-capitol-frankfort-image49313550"
+  // },
+  // {
+  //   state: "Louisiana",
+  //   picture: "https://www.dreamstime.com/stock-photo-louisiana-state-capitol-baton-rouge-image10992720"
+  // },
+  // {
+  //   state: "Maine",
+  //   picture: "https://www.dreamstime.com/stock-photo-maine-state-capitol-augusta-image93654922"
+  // },
+  // {
+  //   state: "Maryland",
+  //   picture: "https://www.dreamstime.com/stock-photo-maryland-state-capitol-annapolis-image7402650"
+  // },
+  // {
+  //   state: "Massachusetts",
+  //   picture: "https://www.dreamstime.com/stock-photo-massachusetts-state-house-gold-domed-building-boston-image70201797"
+  // },
+  // {
+  //   state: "Michigan",
+  //   picture: "https://www.dreamstime.com/stock-photo-michigan-state-capitol-lansing-image56688960"
+  // },
+  // {
+  //   state: "Minnesota",
+  //   picture: "https://www.dreamstime.com/stock-photo-minnesota-state-capitol-saint-paul-image69927469"
+  // },
+  // {
+  //   state: "Mississippi",
+  //   picture: "https://www.dreamstime.com/stock-photo-mississippi-state-capitol-jackson-image21297750"
+  // },
+  // {
+  //   state: "Missouri",
+  //   picture: "https://www.dreamstime.com/stock-photo-missouri-state-capitol-building-jefferson-city-image72172657"
+  // },
+  // {
+  //   state: "Montana",
+  //   picture: "https://www.dreamstime.com/stock-photo-montana-capitol-building-helena-image74856871"
+  // },
+  // {
+  //   state: "Nebraska",
+  //   picture: "https://www.dreamstime.com/stock-photo-nebraska-state-capitol-lincoln-nebraska-image37960820"
+  // },
+  // {
+  //   state: "Nevada",
+  //   picture: "https://www.dreamstime.com/stock-photo-nevada-state-capitol-carson-city-image16681320"
+  // },
+  // {
+  //   state: "New Hampshire",
+  //   picture: "https://www.dreamstime.com/stock-photo-new-hampshire-state-capitol-concord-image18191520"
+  // },
+  // {
+  //   state: "New Jersey",
+  //   picture: "https://www.dreamstime.com/stock-photo-new-jersey-state-capitol-trenton-image15240870"
+  // },
+  // {
+  //   state: "New Mexico",
+  //   picture: "https://www.dreamstime.com/stock-photo-new-mexico-state-capitol-building-santa-fe-image33705140"
+  // },
+  // {
+  //   state: "New York",
+  //   picture: "https://www.dreamstime.com/stock-photo-new-york-state-capitol-albany-image62994117"
+  // },
+  // {
+  //   state: "North Carolina",
+  //   picture: "https://www.dreamstime.com/stock-photo-north-carolina-state-capitol-building-raleigh-image56758466"
+  // },
+  // {
+  //   state: "North Dakota",
+  //   picture: "https://www.dreamstime.com/stock-photo-north-dakota-state-capitol-bismarck-image22117280"
+  // },
+  // {
+  //   state: "Ohio",
+  //   picture: "https://www.dreamstime.com/stock-photo-ohio-state-capitol-columbus-image25145990"
+  // },
+  // {
+  //   state: "Oklahoma",
+  //   picture: "https://www.dreamstime.com/stock-photo-oklahoma-state-capitol-oklahoma-city-image65442559"
+  // },
+  // {
+  //   state: "Oregon",
+  //   picture: "https://www.dreamstime.com/stock-photo-oregon-state-capitol-building-salem-image13994750"
+  // },
+  // {
+  //   state: "Pennsylvania",
+  //   picture: "https://www.dreamstime.com/stock-photo-pennsylvania-state-capitol-harrisburg-image94703567"
+  // },
+  // {
+  //   state: "Rhode Island",
+  //   picture: "https://www.dreamstime.com/stock-photo-rhode-island-state-capitol-providence-image22362070"
+  // },
+  // {
+  //   state: "South Carolina",
+  //   picture: "https://www.dreamstime.com/stock-photo-south-carolina-state-capitol-building-columbia-image20469920"
+  // },
+  // {
+  //   state: "South Dakota",
+  //   picture: "https://www.dreamstime.com/stock-photo-south-dakota-state-capitol-building-pierre-image11153770"
+  // },
+  // {
+  //   state: "Tennessee",
+  //   picture: "https://www.dreamstime.com/stock-photo-tennessee-state-capitol-building-nashville-image106861773"
+  // },
+  // {
+  //   state: "Texas",
+  //   picture: "https://www.dreamstime.com/stock-photo-state-capitol-building-texas-austin-image28223870"
+  // },
+  // {
+  //   state: "Utah",
+  //   picture: "https://www.dreamstime.com/stock-photo-utah-state-capitol-building-salt-lake-city-image33705480"
+  // },
+  // {
+  //   state: "Vermont",
+  //   picture: "https://www.dreamstime.com/stock-photo-vermont-state-capitol-montpelier-image14044480"
+  // },
+  // {
+  //   state: "Virginia",
+  //   picture: "https://www.dreamstime.com/stock-photo-old-state-capitol-buildling-richmond-virginia-image23208470"
+  // },
+  // {
+  //   state: "Washington",
+  //   picture: "https://www.dreamstime.com/stock-photo-washington-state-capitol-building-olympia-image37637440"
+  // },
+  // {
+  //   state: "West Virginia",
+  //   picture: "https://www.dreamstime.com/stock-photo-west-virginia-state-capitol-building"
+  // }
+//]
 
 
 
+
+
+
+
+//Object.assign(statesArray,statesJpegArray)
+
+//Object.assign(statesArray,statesHistoryArray)
+
+
+
+
+//alert(statesArray[0][answer])
 
 
 
@@ -618,7 +627,7 @@ shuffle()
 
 function displayQuestion(){
 // here it test of 3 states
-if (index === 3) {
+if (index === 12) {
 
 //if (index >= statesArray.length) {
     endGame()
@@ -758,7 +767,7 @@ if (TorF==="false") {
 document.querySelector(".jpeg-spot").innerText=jpeg
 // below is not working
 
-alert ("picture" + jpeg)
+//alert ("picture" + picture)
 modal2.classList.add('open')
 modal2ExitBtn.addEventListener("click", (e)=>{
   modal2.classList.remove("open")
