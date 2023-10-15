@@ -734,8 +734,7 @@ function handleClick(e){
       // console.log(typeof(ansPosition))
       // //alert("the correct answer is " + statesHistoryArray[statesArray][index])
       goModal("false",statesArray[index].capitalHistory,statesArray[index].picture)
-
-      // want a modal here to display 
+// want a modal here to display 
 
      }
 
