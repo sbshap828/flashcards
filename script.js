@@ -84,91 +84,105 @@ const statesArray=
     choices: ["Birmingham", "Huntsville", "Mobile", "Montgomery"],
     answer: "Montgomery",
     capitalHistory: "Montgomery became the capital of Alabama in 1846, replacing Tuscaloosa as the seat of state government. The move was part of a compromise to resolve differences between north and south Alabama over the location of the capital.",
-
+    picture:"https://commons.wikimedia.org/wiki/File:New_York_State_Capitol_building,_full.jpg",
   },
   {
     state: "Alaska",
     choices: ["Anchorage", "Fairbanks", "Juneau", "Ketchikan"],
     answer: "Juneau",
-    capitalHistory: "Juneau was founded during a gold rush in 1880 as both a mining town and a place to build a government and state capitol building for the recently acquired territory. The town was named after gold prospector Joe Juneau."
+    capitalHistory: "Juneau was founded during a gold rush in 1880 as both a mining town and a place to build a government and state capitol building for the recently acquired territory. The town was named after gold prospector Joe Juneau.",
+    picture:"https://commons.wikimedia.org/wiki/File:New_York_State_Capitol_building,_full.jpg",
   },
   {
     state: "Arizona",
     choices: ["Flagstaff", "Phoenix", "Tucson", "Yuma"],
     answer: "Phoenix",
     capitalHistory: "Phoenix became the capital of Arizona in 1889, one year before Arizona achieved statehood in 1912. The capital was moved from Prescott to Phoenix because of the city's central location within the state and its growing population.",
+    picture:"https://commons.wikimedia.org/wiki/File:New_York_State_Capitol_building,_full.jpg",
   },
   {
     state: "Arkansas",
     choices: ["Fort Smith", "Little Rock", "Texarkana", "Hot Springs"],
     answer: "Little Rock",
     capitalHistory: "Little Rock became the capital of Arkansas in 1821, when it was still a territory. The capital was moved to Hot Springs briefly, but later moved back to Little Rock where it has remained since.",
+    picture:"https://commons.wikimedia.org/wiki/File:New_York_State_Capitol_building,_full.jpg",
   },
   {
     state: "California",
     choices: ["Los Angeles", "Sacramento", "San Diego", "San Francisco"],
     answer: "Sacramento",
     capitalHistory: "Sacramento became the capital of California in 1854, replacing Monterey. The city was chosen partly because of its location at the confluence of the Sacramento and American Rivers, which made it a good transportation hub.",
+    picture:"https://commons.wikimedia.org/wiki/File:New_York_State_Capitol_building,_full.jpg",
   },
   {
     state: "Colorado",
     choices: ["Denver", "Colorado Springs", "Boulder", "Aspen"],
     answer: "Denver",
     capitalHistory: "Denver became the capital of Colorado in 1867, 11 years after Colorado became a territory. The capital was moved from Golden to Denver due to its more central location in the territory.",
+    picture:"https://commons.wikimedia.org/wiki/File:New_York_State_Capitol_building,_full.jpg",
   },
   {
     state: "Connecticut",
     choices: ["Hartford", "Bridgeport", "New Haven", "Stamford"],
     answer: "Hartford",
     capitalHistory: "Hartford became the capital of Connecticut in 1662, when Connecticut was still a British colony. Hartford was chosen because of its central location in the colony, and because it was an important center of trade and commerce.",
+    picture:"https://commons.wikimedia.org/wiki/File:New_York_State_Capitol_building,_full.jpg",
   },
   {
     state: "Delaware",
     choices: ["Dover", "Wilmington", "Rehoboth Beach", "Bethany Beach"],
     answer: "Dover",
     capitalHistory: "Dover became the capital of Delaware in 1777, during the American Revolution. The capital was moved from New Castle to Dover because of its more central location in the state.",
+    picture:"https://commons.wikimedia.org/wiki/File:New_York_State_Capitol_building,_full.jpg",
   },
   {
     state: "Florida",
     choices: ["St. Augustine", "Tallahassee", "Miami", "Orlando"],
     answer: "Tallahassee",
     capitalHistory: "Tallahassee became the capital of Florida in 1824, replacing St. Augustine and then Pensacola as the capital. The capital was moved to Tallahassee because it was more centrally located within the territory of Florida.",
+    picture:"https://commons.wikimedia.org/wiki/File:New_York_State_Capitol_building,_full.jpg",
   },
   {
     state: "Georgia",
     choices: ["Savannah", "Augusta", "Atlanta", "Athens"],
     answer: "Atlanta",
     capitalHistory: "Atlanta became the capital of Georgia in 1868, during the Reconstruction era after the Civil War. The capital was moved from Milledgeville to Atlanta because it was more centrally located within the state.",
+    picture:"https://commons.wikimedia.org/wiki/File:New_York_State_Capitol_building,_full.jpg",
   },
   {
     state: "Hawaii",
     choices: ["Maui", "Honolulu", "Kauai", "Hilo"],
     answer: "Honolulu",
     capitalHistory: "Honolulu became the capital of Hawaii in 1850, replacing Lahaina on the island of Maui. The capital was moved to Honolulu because of its central location within the Hawaiian Islands, and because it was the center of trade and commerce.",
+    picture:"https://commons.wikimedia.org/wiki/File:New_York_State_Capitol_building,_full.jpg",
   },
   {
     state: "Idaho",
     choices: ["Boise", "Pocatello", "Coeur d'Alene", "Idaho Falls"],
     answer: "Boise",
     capitalHistory: "Boise became the capital of Idaho in 1864, during the Civil War. The capital was moved from Lewiston to Boise because it was more centrally located within the territory of Idaho, and because it was an important commercial and transportation hub.",
+    picture:"https://commons.wikimedia.org/wiki/File:New_York_State_Capitol_building,_full.jpg",
   },
   {
     state: "Illinois",
     choices: ["Chicago", "Springfield", "Peoria", "Rockford"],
     answer: "Springfield",
     capitalHistory: "Springfield became the capital of Illinois in 1839, when Illinois was still a young state. The capital was moved from Vandalia to Springfield because of its more central location within the state.",
+    picture:"https://commons.wikimedia.org/wiki/File:New_York_State_Capitol_building,_full.jpg",
   },
   {
     state: "Indiana",
     choices: ["Fort Wayne", "Indianapolis", "Evansville", "Gary"],
     answer: "Indianapolis",
     capitalHistory: "Indianapolis became the capital of Indiana in 1825, when Indiana was still a territory. The capital was moved from Corydon to Indianapolis because of its more central location within the state.",
+    picture:"https://commons.wikimedia.org/wiki/File:New_York_State_Capitol_building,_full.jpg",
   },
   {
     state: "Iowa",
     choices: ["Cedar Rapids", "Des Moines", "Iowa City", "Davenport"],
     answer: "Des Moines",
     capitalHistory: "Des Moines became the capital of Iowa in 1857, replacing Iowa City as the capital. The capital was moved to Des Moines because of its more central location within the state.",
+    picture:"https://commons.wikimedia.org/wiki/File:New_York_State_Capitol_building,_full.jpg",
   },
   {
     state: "Kansas",
@@ -366,7 +380,7 @@ const statesArray=
     state: "West Virginia",
     choices: ["Charleston", "Huntington", "Morgantown"],
     answer: "Olympia",
-capitalHistory: " Before the capitol was in its current location in Charleston, several West Virginia cities had served as the capitol location for the State of West Virginia. The capitol was first located in Wheeling from 1863-1870 in the Linsly Institute Building. It was moved to downtown Charleston from 1870-1875.",
+    capitalHistory: " Before the capitol was in its current location in Charleston, several West Virginia cities had served as the capitol location for the State of West Virginia. The capitol was first located in Wheeling from 1863-1870 in the Linsly Institute Building. It was moved to downtown Charleston from 1870-1875.",
   } 
 ]
 
@@ -752,22 +766,23 @@ function handleClick(e){
   ans3.disabled = true
   ans4.disabled = true
 }
-function goModal(TorF,CHarlie,jpeg){
+function goModal(TorF,Charlie,jpeg){
 
 //alert("current  " +needtoknow)
 
 if (TorF==="true") {
-  modal2Message.innerText = ("Great Choice!!!!" + CHarlie)
+  modal2Message.innerText = ("Great Choice!!!!" + Charlie)
 } 
 
 if (TorF==="false") {
-  modal2Message.innerText = ("Boo!" + CHarlie)
+  modal2Message.innerText = ("Boo!" + Charlie)
 
 }// here......
-document.querySelector(".jpeg-spot").innerText=jpeg
+document.querySelector(".modal2-jpeg-spot").innerText= "<img src = " + jpeg + "/>"
+//document.getElementsByClassName(".modal2-picture")("<img src = " + jpeg + "/>")
 // below is not working
 
-//alert ("picture" + picture)
+//alert ("picture" + jpeg)
 modal2.classList.add('open')
 modal2ExitBtn.addEventListener("click", (e)=>{
   modal2.classList.remove("open")

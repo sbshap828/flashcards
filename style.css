@@ -213,7 +213,13 @@ left:750px;
     font-weight: bold;
     cursor: pointer;
   }
+.modal2-picture{
 
+ border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+
+}
   
 }
   
