@@ -600,6 +600,8 @@ const modalScore = document.querySelector(".modal-score")
 const modal2ExitBtn = document.querySelector(".modal2-close")
 const modal2Message = document.querySelector(".modal2-message")
 
+const picture = document.querySelector(".jpeg-spot")
+
 let index = 0
 let scoreTotal = 0
 let ansPosition = ""
@@ -724,15 +726,16 @@ function handleClick(e){
     scoreTotal++
     scoreBoard.innerText = scoreTotal
     //alert("the correct answer is " + statesArray[index].answer)
-    goModal("true",statesArray[index].capitalHistory)
+    goModal("true",statesArray[index].capitalHistory,statesArray[index].picture)
     //modal here- with same as below 
      } else {
       // console.log("here is where we neeed " +statesArray[index].answer)
       // console.log("the correct answer is  "+ needtoknow)
       // console.log(typeof(ansPosition))
       // //alert("the correct answer is " + statesHistoryArray[statesArray][index])
-      goModal("false",statesArray[index].capitalHistory)
-// want a modal here to display 
+      goModal("false",statesArray[index].capitalHistory,statesArray[index].picture)
+
+      // want a modal here to display 
 
      }
 
@@ -741,7 +744,7 @@ function handleClick(e){
   ans3.disabled = true
   ans4.disabled = true
 }
-function goModal(TorF,CHarlie){
+function goModal(TorF,CHarlie,jpeg){
 
 //alert("current  " +needtoknow)
 
@@ -752,8 +755,11 @@ if (TorF==="true") {
 if (TorF==="false") {
   modal2Message.innerText = ("Boo!" + CHarlie)
 
-}
+}// here......
+document.querySelector(".jpeg-spot").innerText=jpeg
+// below is not working
 
+alert ("picture" + jpeg)
 modal2.classList.add('open')
 modal2ExitBtn.addEventListener("click", (e)=>{
   modal2.classList.remove("open")
