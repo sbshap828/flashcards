@@ -75,9 +75,10 @@ body, html {
     flex-wrap: wrap;
     justify-content: space-around;
   }
-
+  
   .game--desImg-container {
     display: flex;
+    visibility: hidden;
   }
 
   .game--description {
@@ -88,6 +89,7 @@ body, html {
   .game--image {
     width: 400px;
     padding: 15px;
+    height: 400px;
   }
 
   .game--ans1{
