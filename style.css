@@ -84,6 +84,7 @@ body, html {
   .game--description {
     font-size: 30px;
     padding: 20px;
+    text-align: left;
   }
 
   .game--image {
@@ -196,7 +197,7 @@ body, html {
     border: 0px;
     font-weight: bold;
     cursor: pointer;
-
+ 
   }
  
   

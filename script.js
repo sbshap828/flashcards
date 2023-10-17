@@ -17,7 +17,7 @@ const statesArray = [
       "Juneau was founded during a gold rush in 1880 as both a mining town and a place to build a government and state capitol building for the recently acquired territory. The town was named after gold prospector Joe Juneau.",
     picture:
       "https://upload.wikimedia.org/wikipedia/commons/9/91/Alaska_State_Capitol_building_79.JPG",
-    mp3: "./mp3/alaska.mp3",
+    mp3: "./mp3s/alaska.mp3",
   },
   {
     state: "Arizona",
@@ -237,7 +237,7 @@ const statesArray = [
       "Jackson became the capital of Mississippi in 1821, when Mississippi became a state. The capital was moved from Natchez to Jackson because of its more central location within the state.",
     picture:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Mississippi_State_Capitol_Building_%2826815684617%29.jpg/1599px-Mississippi_State_Capitol_Building_%2826815684617%29.jpg",
-    mp3: "mississipp.i/mp3s/miss.mp3",
+    mp3: "./mp3s/mississippi.mp3",
   },
   {
     state: "Missouri",
@@ -498,6 +498,26 @@ const statesArray = [
       "https://upload.wikimedia.org/wikipedia/commons/a/a9/Wyoming_Capitol_Exterior.jpg",
     mp3: "./mp3s/wyoming.mp3",
   },
+  {
+    state: "Washington,D.C",
+    choices: ["Biden", "Trump", "General Assembly", "None"],
+    answer: "None",
+    capitalHistory:
+      "Washington,D.C. Is not a state",
+    picture:
+      "https://upload.wikimedia.org/wikipedia/commons/2/27/Capitol_Building_Full_View.jpg",
+    mp3: "./mp3s/washdc.mp3",
+  },
+  {
+    state: "GA",
+    choices: ["Chris", "Raul", "Megan", "All of them"],
+    answer: "All of them",
+    capitalHistory:
+      "to be continued ",
+    picture:
+      "https://upload.wikimedia.org/wikipedia/commons/7/71/Chordeiles_minorEJN31CB.jpg",
+    mp3: "./mp3s/wyoming.mp3",
+  },
 ];
 
 const scoreBoard = document.querySelector("#score-board");
@@ -547,7 +567,7 @@ function displayQuestion() {
 
   // needtoknow=statesArray[index]
   //alert (needtoknow + "kkjkg")
-  question.innerText = currentQuestion.state;
+  question.innerText = "What is the capital of \n \n" + currentQuestion.state;
   //we need to intercept the shuffle to learn where answer ended up
 
   let originalPosition = currentQuestion.choices[0];
@@ -586,7 +606,7 @@ function displayQuestion() {
 }
 
 function endGame() {
-  alert("end of game");
+
   if (scoreTotal > 40) {
     modalMessage.innerText = "You are really good at this!";
     modalScore.innerText = scoreTotal;
