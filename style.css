@@ -197,87 +197,16 @@ body, html {
     border: 0px;
     font-weight: bold;
     cursor: pointer;
- 
   }
- 
-  
-
-
 }
 
 
 
-.modal2 {
-  font-size: 15px;
-  position:absolute;
-  text-align:left;
-  margin:100px;
-  width: 300px;
-  height: 200px;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.3s ease;
-  top: 0;
-  left: 0;
-  display:inline-block;
-  align-items: center;
-  justify-content: center;
-  &.open {
-    visibility: visible;
-    opacity: 1;
-    transition-delay: 0s;
-  }
-  &-bg {
-    position: absolute;
-    background: teal;
-    width: 100%;
-    height: 100%;
-  }
-  &-container {
-    border-radius: 10px;
-    background: #fff;
-    position: relative;
-    padding: 30px;
-  }
-  &-close {
-    position: absolute;
-    right: 15px;
-    top: 15px;
-    outline: none;
-    appearance: none;
-    color: red;
-    background: none;
-    border: 0px;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  &-modal exit{
-  height: 200px;
-
-  }
-  
-  &-jpeg-spot {
-    position: absolute;
-    outline-color: black;
-    outline-width: 3px;
-    height: 200px;
-    width: 200px;
-
-
-  }
 .modal-exit {
-  width: 200px;
-  height: 30px;
-}
-
-.modal2-picture{
-
- border-radius: 5px;
-      cursor: pointer;
-      transition: 0.3s;
-
+  font-size: 40px;
 }
 
 
-}
+
+
   

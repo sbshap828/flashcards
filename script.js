@@ -513,7 +513,7 @@ const statesArray = [
     choices: ["Chris", "Raul", "Megan", "All of them"],
     answer: "All of them",
     capitalHistory:
-      "to be continued ",
+      "While GA is not a state per se, it is a state on mind led by our noble team of Chris, Raul, Megan! ",
     picture:
       "https://upload.wikimedia.org/wikipedia/commons/7/71/Chordeiles_minorEJN31CB.jpg",
     mp3: "./mp3s/ga.mp3",
@@ -556,9 +556,9 @@ function shuffle() {
 shuffle();
 
 function displayQuestion() {
-  // here it test of 3 states
-  if (index === 25) {
-    //if (index >= statesArray.length) {
+// here it test of 3 states
+  //if (index >= 3) {
+  if (index >= statesArray.length) {
     endGame();
     return;
   }
@@ -566,7 +566,7 @@ function displayQuestion() {
   let currentQuestion = statesArray[index];
 
   // needtoknow=statesArray[index]
-  //alert (needtoknow + "kkjkg")
+
   question.innerText = "What is the capital of \n \n" + currentQuestion.state;
   //we need to intercept the shuffle to learn where answer ended up
 
@@ -579,20 +579,7 @@ function displayQuestion() {
     currentQuestion.choices[i] = currentQuestion.choices[j];
     currentQuestion.choices[j] = temp;
   }
-  // if (originalPosition===currentQuestion.choices[0]){
-  //   ansPosition=0
-  // }
-  // if (originalPosition===currentQuestion.choices[1]){
-  //   ansPosition=1
-  // }
-  // if (originalPosition===currentQuestion.choices[2]){
-  //   ansPosition=2
-  // }
-  // if (originalPosition===currentQuestion.choices[3]){
-  //   ansPosition=3
-  // }
-  //now have the new positions
-
+  
   ans1.innerText = currentQuestion.choices[0];
   ans2.innerText = currentQuestion.choices[1];
   ans3.innerText = currentQuestion.choices[2];
@@ -651,13 +638,9 @@ function handleClick(e) {
     scoreBoard.innerText = scoreTotal;
 
     message += "Great! ";
-    //alert("the correct answer is " + statesArray[index].answer)
-
-    // goModal("true",statesArray[index].capitalHistory,statesArray[index].picture)
   } else {
-    message += "Booo! ";
+    message += "Good Guess but wrong. ";
 
-    // goModal("false",statesArray[index].capitalHistory,statesArray[index].picture)
   }
 
   message += statesArray[index].capitalHistory;
@@ -671,33 +654,7 @@ function handleClick(e) {
   ans4.disabled = true;
 }
 
-function goModal(TorF, Charlie, jpeg) {
-  if (TorF === "true") {
-    modal2Message.innerText = "Great Choice!!!! " + Charlie;
-  }
 
-  if (TorF === "false") {
-    modal2Message.innerText = "Boo! " + Charlie;
-  }
-  alert("this is the file " + jpeg);
-  // index=index + 1
-  // here......
-  //document.querySelector(".modal2-jpeg-spot").innerText= '<img src = "' + jpeg + '"width = "190" height ="237" />'
-  //this works for text document.querySelector(".modal2-jpeg-spot").innerText= "<img src = " + jpeg + "/>"
-  document.querySelector(".modal2-jpeg-spot").src =
-    +jpeg + '"width = "700" height ="237" />';
-  //vadocument.getElementById("myImg");
-  //var modalImg = document.getElementById("img01");
-
-  //<img class="modal2-content" id="img01"
-  //document.getElementsByClassName(".modal2-picture")("<img src = " + jpeg + "/>")
-  // below is not working
-  modal2.classList.add("open");
-  modal2ExitBtn.addEventListener("click", (e) => {
-    modal2.classList.remove("open");
-    nextQuestion();
-  });
-}
 
 displayQuestion();
 
