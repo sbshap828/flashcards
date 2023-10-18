@@ -516,7 +516,7 @@ const statesArray = [
       "to be continued ",
     picture:
       "https://upload.wikimedia.org/wikipedia/commons/7/71/Chordeiles_minorEJN31CB.jpg",
-    mp3: "./mp3s/wyoming.mp3",
+    mp3: "./mp3s/ga.mp3",
   },
 ];
 
