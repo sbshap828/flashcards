@@ -510,10 +510,10 @@ const statesArray = [
   },
   {
     state: "GA",
-    choices: ["Chris", "Raul", "Megan", "All of them"],
+    choices: ["Chris, Raul, Megan & Jordan", "Chris, Raul, Megan & Jordan","Chris, Raul, Megan & Jordan", "All of them"],
     answer: "All of them",
     capitalHistory:
-      "While GA is not a state per se, it is a state of mind led by our noble team of Chris, Raul, Megan! ",
+      "While GA is not a state per se, it is a state of mind led by our noble team of Chris, Raul, Megan and Jordan! ",
     picture:
       "https://upload.wikimedia.org/wikipedia/commons/7/71/Chordeiles_minorEJN31CB.jpg",
     mp3: "./mp3s/ga.mp3",
